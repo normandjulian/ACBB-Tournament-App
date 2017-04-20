@@ -41,5 +41,10 @@ export class LoginPage {
             login: ['', [<any>Validators.required]],
             password: ['', [<any>Validators.required]]
         });
+
+        this.authentication({
+            login: 'julian',
+            password: 'julian'
+        }, true)
     }
 }

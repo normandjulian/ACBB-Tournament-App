@@ -7,10 +7,29 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-item *ngIf="categories.length !== 0">
-        <ion-label>Category</ion-label>
-        <ion-select [(ngModel)]="category">
-            <ion-option *ngFor="let category of categories">{{category.name}}</ion-option>
-        </ion-select>
-    </ion-item>
+    <ion-list>
+        <ion-item-group *ngIf="categories.length !== 0">
+          <ion-item>
+            <ion-label>Categories</ion-label>
+            <ion-select [(ngModel)]="category" (ionChange)="category_change($event)">
+                <ion-option [value]="category" *ngFor="let category of categories">{{category.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-item-group>
+
+        <ion-item *ngIf="contests.length !== 0">
+            <ion-label>Poules</ion-label>
+            <ion-select [(ngModel)]="contest" (ionChange)="contest_change($event)">
+                <ion-option [value]="contest" *ngFor="let contest of contests">{{contest.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item-group *ngIf="games.length !== 0">
+            <ion-label>Matchs</ion-label>
+            <ion-item *ngFor="let game of games" (click)="select_game(game)">
+                {{game.firstTeam.name}} vs {{game.secondTeam.name}}
+            </ion-item>
+      </ion-item-group>
+
+    </ion-list>
 </ion-content>

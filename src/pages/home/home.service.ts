@@ -14,14 +14,14 @@ export class HomeService {
                 @Inject(APP_CONFIG) private config: IAppConfig) {
     };
 
-    // get_all(category_id: string): Observable<any[]> {
-    //     let headers = new Headers();
-    //     this.authenticationService.set_header(headers);
-    //
-    //     return this.http.get(`${this.config.apiEndpoint}categories/${category_id}/contests`, {headers: headers})
-    //         .map((res: Response) => res.json())
-    //         .catch((error: any) => Observable.throw(error.json()));
-    // }
+    get_all_contests(category_id: string): Observable<any[]> {
+        let headers = new Headers();
+        this.authenticationService.set_header(headers);
+
+        return this.http.get(`${this.config.apiEndpoint}categories/${category_id}/contests`, {headers: headers})
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json()));
+    }
 
     get_all_categories(): Observable<any[]> {
         let headers = new Headers();
@@ -31,6 +31,16 @@ export class HomeService {
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json()));
     }
+
+    get_one_contest(contest_id: string): Observable<any> {
+        let headers = new Headers();
+        this.authenticationService.set_header(headers);
+
+        return this.http.get(`${this.config.apiEndpoint}contests/${contest_id}`, {headers: headers})
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json()));
+    }
+
 
     // update_game(game: Game): Observable<Game> {
     //     let headers = new Headers();
