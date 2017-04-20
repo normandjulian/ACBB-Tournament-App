@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item *ngIf="categories.length !== 0">
+        <ion-label>Category</ion-label>
+        <ion-select [(ngModel)]="category">
+            <ion-option *ngFor="let category of categories">{{category.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+</ion-content>
