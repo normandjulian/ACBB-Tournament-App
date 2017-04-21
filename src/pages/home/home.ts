@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, LoadingController} from 'ionic-angular';
 import {HomeService} from "./home.service";
+import {GamePage} from "../game/game";
 
 @Component({
     selector: 'page-home',
@@ -43,7 +44,9 @@ export class HomePage {
     }
 
     select_game(game: any) {
-      console.log(game)
+      this.navCtrl.push(GamePage, {
+          _id: game._id
+      })
     }
 
     ionViewDidLoad() {
@@ -52,7 +55,9 @@ export class HomePage {
         this.homeService.get_all_categories().subscribe(
             (res) => {
               loading.dismiss();
-              this.categories = res
+              this.categories = res;
+
+              this.select_game({ _id : '58e4bee83e0f090d44ff29d6'})
             }
         )
     }

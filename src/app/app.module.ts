@@ -12,12 +12,14 @@ import {LoginPage} from '../pages/login/login';
 import {AuthenticationService} from "../services/authentication.service";
 import {HttpModule} from "@angular/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {GamePage} from "../pages/game/game";
 
 @NgModule({
     declarations: [
         MyApp,
         HomePage,
-        LoginPage
+        LoginPage,
+        GamePage
     ],
     imports: [
         BrowserModule,
@@ -30,7 +32,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     entryComponents: [
         MyApp,
         HomePage,
-        LoginPage
+        LoginPage,
+        GamePage
     ],
     providers: [
         StatusBar,

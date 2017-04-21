@@ -6,13 +6,33 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>game</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Match</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
+    <form [formGroup]="game_form" (ngSubmit)="update_game(game_form.value, game_form.valid)" *ngIf="game">
+        <ion-list>
+
+            <ion-item>
+                <ion-label fixed>{{game.firstTeam.name}}</ion-label>
+                <ion-input type="number" formControlName="firstScore"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>Versus</ion-label>
+            </ion-item>
+
+            <ion-item>
+                <ion-label fixed>{{game.secondTeam.name}}</ion-label>
+                <ion-input type="number" formControlName="secondScore"></ion-input>
+            </ion-item>
+
+        </ion-list>
+        <button ion-button full type="submit">Enregistrer</button>
+    </form>
 </ion-content>
