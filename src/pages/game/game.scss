@@ -1,3 +1,87 @@
 page-game {
+  .background {
+    background-image: url('../assets/background.jpg');
+    background-repeat: round;
+  }
 
+  .scroll-content {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  ion-card.card {
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+  }
+
+  ion-card ion-input, ion-card button {
+    border-radius: 0;
+  }
+
+  a, ion-card-header.card-header {
+    color: #FFFFFF;
+  }
+
+  .list > .item-block:first-child {
+    border: medium none;
+  }
+
+  .item {
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: medium none;
+
+    .text-input {
+      color: #FFFFFF;
+      text-align: right;
+    }
+    .label {
+      color: white;
+      font-weight: bold;
+    }
+    &.versus {
+      background: rgba(255, 255, 255, 0);
+      color: #fff;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    input::-moz-placeholder {
+      color: #FFF !important;
+    }
+    input:-moz-placeholder {
+      color: #FFF !important;
+    }
+
+    *::-webkit-input-placeholder {
+      color: #FFF !important;
+    }
+    *:-ms-input-placeholder {
+      color: #FFF !important;
+    }
+    *:-moz-placeholder {
+      color: #FFF !important;
+    }
+
+  }
+
+  .button {
+    margin-top: 50px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
 }

@@ -12,7 +12,7 @@ import {HomePage} from "../home/home";
  */
 @Component({
     selector: 'page-login',
-    templateUrl: 'login.html',
+    templateUrl: 'login.html'
 })
 export class LoginPage {
     public user: any = null;
@@ -28,7 +28,7 @@ export class LoginPage {
             this.authenticationService.authentication(value).subscribe(
                 (res) => {
                     localStorage.setItem('token', res.token);
-                    this.navCtrl.push(HomePage)
+                    this.navCtrl.setRoot(HomePage);
                 },
                 (err) => console.log(err)
             );
@@ -41,10 +41,5 @@ export class LoginPage {
             login: ['', [<any>Validators.required]],
             password: ['', [<any>Validators.required]]
         });
-
-        this.authentication({
-            login: 'julian',
-            password: 'julian'
-        }, true)
     }
 }

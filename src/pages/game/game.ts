@@ -18,6 +18,18 @@ export class GamePage {
                 public fb: FormBuilder) {
     }
 
+    update_game(value: any, isValid: boolean) {
+        if (isValid) {
+            value._id = this.game._id;
+
+            this.gameService.update_game(value).subscribe(
+                () => {
+                    this.navCtrl.pop()
+                }
+            )
+        }
+    }
+
     ionViewDidLoad() {
         // Initialise the form
         this.game_form = this.fb.group({
@@ -31,8 +43,8 @@ export class GamePage {
                 this.game = res;
 
                 this.game_form.patchValue({
-                    firstScore: this.game.firstScore,
-                    secondScore: this.game.secondScore,
+                    firstScore: this.game.firstScore || 0,
+                    secondScore: this.game.secondScore || 0
                 });
             }
         )

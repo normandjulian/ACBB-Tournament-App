@@ -56,8 +56,6 @@ export class HomePage {
             (res) => {
               loading.dismiss();
               this.categories = res;
-
-              this.select_game({ _id : '58e4bee83e0f090d44ff29d6'})
             }
         )
     }

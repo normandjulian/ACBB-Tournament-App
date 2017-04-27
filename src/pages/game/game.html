@@ -1,38 +1,26 @@
-<!--
-  Generated template for the Game page.
+<ion-content class="background">
+        <ion-card>
+          <ion-card-content>
+            <form [formGroup]="game_form" (ngSubmit)="update_game(game_form.value, game_form.valid)" *ngIf="game">
+              <ion-list no-line>
+                  <ion-item>
+                      <ion-label>{{game.firstTeam.name}}</ion-label>
+                      <ion-input type="text" formControlName="firstScore" placeholder="12"></ion-input>
+                  </ion-item>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+                  <ion-item class="versus">
+                      Versus
+                  </ion-item>
 
-    <ion-navbar>
-        <ion-title>Match</ion-title>
-    </ion-navbar>
+                  <ion-item>
+                    <ion-label>{{game.secondTeam.name}}</ion-label>
+                      <ion-input type="text" formControlName="secondScore" placeholder="20"></ion-input>
+                  </ion-item>
 
-</ion-header>
+              </ion-list>
+              <button ion-button block color="tango" type="submit">Enregistrer</button>
 
-
-<ion-content padding>
-
-    <form [formGroup]="game_form" (ngSubmit)="update_game(game_form.value, game_form.valid)" *ngIf="game">
-        <ion-list>
-
-            <ion-item>
-                <ion-label fixed>{{game.firstTeam.name}}</ion-label>
-                <ion-input type="number" formControlName="firstScore"></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label fixed>Versus</ion-label>
-            </ion-item>
-
-            <ion-item>
-                <ion-label fixed>{{game.secondTeam.name}}</ion-label>
-                <ion-input type="number" formControlName="secondScore"></ion-input>
-            </ion-item>
-
-        </ion-list>
-        <button ion-button full type="submit">Enregistrer</button>
-    </form>
+            </form>
+          </ion-card-content>
+        </ion-card>
 </ion-content>

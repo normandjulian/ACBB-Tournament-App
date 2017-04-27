@@ -1,3 +1,11 @@
 page-home {
+  .background {
+    background-image: url('../assets/background.jpg');
+    background-repeat: round;
+  }
 
+  ion-card.card {
+    margin: 0;
+    width: 100%;
+  }
 }
