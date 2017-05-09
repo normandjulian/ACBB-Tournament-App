@@ -1,35 +1,34 @@
 <ion-content padding class="background">
+  <ion-list>
+    <ion-item-group *ngIf="categories.length !== 0">
+      <ion-item>
+        <ion-label>Categories</ion-label>
+        <ion-select [(ngModel)]="category" (ionChange)="category_change($event)">
+          <ion-option [value]="category" *ngFor="let category of categories">{{category.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item *ngIf="contests.length !== 0">
+      <ion-label>Poules</ion-label>
+      <ion-select [(ngModel)]="contest" (ionChange)="contest_change($event)">
+        <ion-option [value]="contest" *ngFor="let contest of contests">{{contest.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-card *ngIf="games.length !== 0">
+    <ion-card-header>
+      Matchs
+    </ion-card-header>
+
     <ion-list>
-        <ion-item-group *ngIf="categories.length !== 0">
-          <ion-item>
-            <ion-label>Categories</ion-label>
-            <ion-select [(ngModel)]="category" (ionChange)="category_change($event)">
-                <ion-option [value]="category" *ngFor="let category of categories">{{category.name}}</ion-option>
-            </ion-select>
-          </ion-item>
-        </ion-item-group>
 
-        <ion-item *ngIf="contests.length !== 0">
-            <ion-label>Poules</ion-label>
-            <ion-select [(ngModel)]="contest" (ionChange)="contest_change($event)">
-                <ion-option [value]="contest" *ngFor="let contest of contests">{{contest.name}}</ion-option>
-            </ion-select>
-        </ion-item>
-</ion-list>
-        <ion-card *ngIf="games.length !== 0">
-  <ion-card-header >
-    Les matchs
-  </ion-card-header>
-
-  <ion-list >
-
-    <button ion-item *ngFor="let game of games" (click)="select_game(game)">
-      <ion-icon name="basketball" item-left></ion-icon>
+      <button ion-item *ngFor="let game of games" (click)="select_game(game)">
+        <span class="display-time">{{game.date | date:'HH:mm'}}</span>
       {{game.firstTeam.name}} vs {{game.secondTeam.name}}
+      <ion-icon name="arrow-round-forward" item-right></ion-icon>
     </button>
 
-  </ion-list>
-</ion-card>
-
-
+    </ion-list>
+  </ion-card>
 </ion-content>

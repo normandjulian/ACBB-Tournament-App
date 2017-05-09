@@ -41,7 +41,7 @@ export class GamePage {
         this.gameService.get_one_game(_id).subscribe(
             (res) => {
                 this.game = res;
-
+                console.log(res)
                 this.game_form.patchValue({
                     firstScore: this.game.firstScore || 0,
                     secondScore: this.game.secondScore || 0

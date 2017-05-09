@@ -1,11 +1,42 @@
 page-home {
   .background {
-    background-image: url('../assets/background.jpg');
-    background-repeat: round;
+    background-image: url('../../assets/logo-acbb.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: 96px;
+    overflow-x: hidden;
+    color: rgb(26, 23, 27);
+    font-size: medium;
   }
-
+  ion-item.item {
+    border: 1px solid #f77300;
+    margin-bottom: 10px;
+    ion-label.label {
+      color: #f77300;
+    }
+    .select-md .select-icon .select-icon-inner {
+      color: #000;
+    }
+  }
   ion-card.card {
     margin: 0;
     width: 100%;
+    border: 1px solid #f77300;
+    box-shadow: none;
+    ion-card-header.card-header {
+      text-align: left;
+      color: #f77300;
+      font-size: large;
+      border-bottom: 2px solid #f77300;
+    }
+    .input-wrapper {
+      font-size: large;
+    }
+    .display-time {
+      border-right: 1px solid #f77300;
+      padding-right: 5px;
+    }
   }
 }

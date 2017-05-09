@@ -1,21 +1,16 @@
-<ion-content class="background">
-    <ion-card>
-        <img src="assets/logo-acbb.png"/>
-        <ion-card-content>
-            <form [formGroup]="user" (ngSubmit)="authentication(user.value, user.valid)">
-                <ion-list no-line>
-                    <ion-item>
-                        <ion-input type="text" formControlName="login" placeholder="Identifiant"></ion-input>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
-                    </ion-item>
-
-                </ion-list>
-                <button ion-button block color="tango" type="submit">Connexion</button>
-            </form>
-
-        </ion-card-content>
-    </ion-card>
+<ion-content>
+  <div class="card">
+    <img src="assets/logo-acbb.png" />
+    <div class="content">
+      <form [formGroup]="user" (ngSubmit)="authentication(user.value, user.valid)">
+          <div class="field">
+            <input type="text" formControlName="login" placeholder="Identifiant">
+          </div>
+          <div class="field">
+            <input type="password" formControlName="password" placeholder="Password">
+          </div>
+        <button ion-button block color="tango" type="submit">Connexion</button>
+      </form>
+    </div>
+  </div>
 </ion-content>

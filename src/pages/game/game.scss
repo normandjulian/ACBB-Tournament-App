@@ -1,87 +1,61 @@
 page-game {
   .background {
-    background-image: url('../assets/background.jpg');
-    background-repeat: round;
+    background-image: url('../../assets/logo-acbb.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: 96px;
+    overflow-x: hidden;
+    color: rgb(26, 23, 27);
+    font-size: medium;
   }
-
   .scroll-content {
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
   }
-
-  ion-card.card {
-    box-shadow: none;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 0;
+  div.card {
+    margin: 20px;
+    margin-top: 200px;
   }
-
-  ion-card ion-input, ion-card button {
-    border-radius: 0;
-  }
-
-  a, ion-card-header.card-header {
-    color: #FFFFFF;
-  }
-
-  .list > .item-block:first-child {
-    border: medium none;
-  }
-
-  .item {
-    margin-bottom: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    border: medium none;
-
-    .text-input {
-      color: #FFFFFF;
-      text-align: right;
+  div.field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    border-bottom: 1px solid #f77300;
+    label {
+      width: 60%;
+      font-size: x-large;
+      margin: auto;
     }
-    .label {
-      color: white;
-      font-weight: bold;
-    }
-    &.versus {
-      background: rgba(255, 255, 255, 0);
-      color: #fff;
+    input {
+      height: 100%;
+      width: 40%;
+      font-size: x-large;
       text-align: center;
-      font-size: 24px;
+      border: 1px solid #f77300;
+      border-bottom: none;
     }
-
-    input::-moz-placeholder {
-      color: #FFF !important;
-    }
-    input:-moz-placeholder {
-      color: #FFF !important;
-    }
-
-    *::-webkit-input-placeholder {
-      color: #FFF !important;
-    }
-    *:-ms-input-placeholder {
-      color: #FFF !important;
-    }
-    *:-moz-placeholder {
-      color: #FFF !important;
-    }
-
   }
-
-  .button {
-    margin-top: 50px;
+  button.button-md {
+    margin-top: 20px;
+    height: 50px;
+    box-shadow: none;
     border-radius: 0;
-    box-shadow: none;
   }
-
-  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
-    border-bottom-color: transparent;
-    box-shadow: none;
+  input::-moz-placeholder {
+    text-align: center;
   }
-
-  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
-    border-bottom-color: transparent;
-    box-shadow: none;
+  input:-moz-placeholder {
+    text-align: center;
+  }
+  *::-webkit-input-placeholder {
+    text-align: center;
+  }
+  *:-ms-input-placeholder {
+    text-align: center;
+  }
+  *:-moz-placeholder {
+    text-align: center;
   }
 }

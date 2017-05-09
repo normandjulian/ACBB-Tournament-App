@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {NavController, LoadingController} from 'ionic-angular';
-import {HomeService} from "./home.service";
-import {GamePage} from "../game/game";
+import { Component } from '@angular/core';
+import { NavController, LoadingController } from 'ionic-angular';
+import { HomeService } from "./home.service";
+import { GamePage } from "../game/game";
 
 @Component({
     selector: 'page-home',
@@ -16,8 +16,8 @@ export class HomePage {
     public contest: any = null;
     public loading = null;
     constructor(public navCtrl: NavController,
-                public homeService: HomeService,
-              public loadingCtrl: LoadingController) {
+        public homeService: HomeService,
+        public loadingCtrl: LoadingController) {
     }
 
     category_change() {
@@ -25,37 +25,37 @@ export class HomePage {
         loading.present();
         this.homeService.get_all_contests(this.category._id).subscribe(
             (res) => {
-              this.contests = res;
-              loading.dismiss();
+                this.contests = res;
+                loading.dismiss();
             }
         )
     }
 
     contest_change() {
-      let loading = this.loadingCtrl.create({ content: 'Oulala ça arrive...' });
-      loading.present();
+        let loading = this.loadingCtrl.create({ content: 'Oulala ça arrive...' });
+        loading.present();
         this.homeService.get_one_contest(this.contest._id).subscribe(
             (res) => {
-              this.games = res.games;
-              loading.dismiss();
+                this.games = res.games;
+                loading.dismiss();
             }
             // res => console.log(res)
         )
     }
 
     select_game(game: any) {
-      this.navCtrl.push(GamePage, {
-          _id: game._id
-      })
+        this.navCtrl.push(GamePage, {
+            _id: game._id
+        })
     }
 
     ionViewDidLoad() {
-      let loading = this.loadingCtrl.create({ content: 'Un ptit punch ?' });
-      loading.present();
+        let loading = this.loadingCtrl.create({ content: 'Un ptit punch ?' });
+        loading.present();
         this.homeService.get_all_categories().subscribe(
             (res) => {
-              loading.dismiss();
-              this.categories = res;
+                loading.dismiss();
+                this.categories = res;
             }
         )
     }

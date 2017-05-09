@@ -1,26 +1,17 @@
-<ion-content class="background">
-        <ion-card>
-          <ion-card-content>
-            <form [formGroup]="game_form" (ngSubmit)="update_game(game_form.value, game_form.valid)" *ngIf="game">
-              <ion-list no-line>
-                  <ion-item>
-                      <ion-label>{{game.firstTeam.name}}</ion-label>
-                      <ion-input type="text" formControlName="firstScore" placeholder="12"></ion-input>
-                  </ion-item>
-
-                  <ion-item class="versus">
-                      Versus
-                  </ion-item>
-
-                  <ion-item>
-                    <ion-label>{{game.secondTeam.name}}</ion-label>
-                      <ion-input type="text" formControlName="secondScore" placeholder="20"></ion-input>
-                  </ion-item>
-
-              </ion-list>
-              <button ion-button block color="tango" type="submit">Enregistrer</button>
-
-            </form>
-          </ion-card-content>
-        </ion-card>
+<ion-content>
+  <div class="card">
+    <div class="content">
+      <form [formGroup]="game_form" (ngSubmit)="update_game(game_form.value, game_form.valid)" *ngIf="game">
+        <div class="field">
+            <label>{{game.firstTeam.name}}</label>
+          <input type="number" formControlName="firstScore" placeholder="12">
+        </div>
+        <div class="field">
+          <label>{{game.secondTeam.name}}</label>
+          <input type="number" formControlName="secondScore" placeholder="20">
+        </div>
+        <button ion-button block color="tango" type="submit">Enregistrer</button>
+      </form>
+    </div>
+  </div>
 </ion-content>
